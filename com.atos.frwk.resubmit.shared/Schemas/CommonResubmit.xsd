@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/CommonResubmit" xmlns:tns="http://www.example.org/CommonResubmit" elementFormDefault="qualified">
+
+    <element name="ID" type="decimal"></element>
+
+    <element name="Esito" type="string"></element>
+
+
+
+    <element name="Status" type="string"></element>
+
+    <element name="IdtoResubmit" type="tns:IdtoResubmitType"></element>
+
+    <complexType name="IdtoResubmitType">
+    	<sequence>
+    		<element name="ID" type="string" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="SetStatus_Input" type="tns:SetStatus_Input_Type"></element>
+
+    <element name="SetStatus_Output" type="tns:SetStatus_Output_Type"></element>
+
+    <complexType name="SetStatus_Input_Type">
+    	<sequence>
+    		<element name="P_ID" type="decimal"></element>
+    		<element name="P_STATUS" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="SetStatus_Output_Type">
+    	<sequence>
+    		<element name="P_OUT_DESC" type="string" nillable="true" minOccurs="0" maxOccurs="1"></element>
+    		<element name="P_OUT_COD" type="string" nillable="true" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+
+    <element name="Resubmit_CommonInterface_Input" type="tns:Resubmit_CommonInterface_Input_Type"></element>
+
+    <complexType name="Resubmit_CommonInterface_Input_Type">
+    	<sequence>
+    		<element name="ID" type="decimal" minOccurs="0" maxOccurs="1"></element>
+    		<element name="TIPO_RICH" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="XML_RICH" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="STATUS" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="PROC_NAME" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DOC_LOG_ID" type="decimal" minOccurs="0" maxOccurs="1"></element>
+    		<element name="BUS_KEY" type="string" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Resubmit_CommonInterface_Output_Type">
+    	<sequence>
+    		<element name="Code" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="Message" type="string" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Resubmit_CommonInterface_Output" type="tns:Resubmit_CommonInterface_Output_Type"></element>
+
+    <element name="ProcedureResponse" type="string"></element>
+
+    <complexType name="ProcedureResponse_Type">
+    	<sequence>
+    		<element name="response" minOccurs="1" maxOccurs="1">
+    			<complexType>
+    				<sequence>
+    					<element name="p_out_cod" type="string" minOccurs="0" maxOccurs="1"></element>
+    					<element name="p_out_desc" type="string" minOccurs="0" maxOccurs="1"></element>
+    				</sequence>
+    			</complexType></element>
+    	</sequence>
+    </complexType>
+</schema>

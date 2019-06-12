@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:subject="http://xsd.tns.tibco.com/trinity/models/identity/subject" xmi:id="_62zW0X04EemrTa9WoPb-qg" name="sharedresubmit.PostgresDB" type="jdbc:JdbcDataSource">
+  <jndi:reference xmi:id="_62_kEH04EemrTa9WoPb-qg" key="subjectJndiName" type="subject:SubjectConfiguration" value=""/>
+  <jndi:configuration xsi:type="jdbc:JdbcDataSource" xmi:id="_63ALIH04EemrTa9WoPb-qg">
+    <substitutionBindings xmi:id="_YUlykIXhEemIC-_J-9q4iQ" template="maxConnections" propName="/JDBCConnection/MaxConnection"/>
+    <substitutionBindings xmi:id="_ZkrhcIXhEemIC-_J-9q4iQ" template="username" propName="/JDBCConnection/Username"/>
+    <substitutionBindings xmi:id="_aNbjgIXhEemIC-_J-9q4iQ" template="password" propName="/JDBCConnection/Password"/>
+    <connectionConfig xsi:type="jdbc:NonXaConnection" xmi:id="_63ALIX04EemrTa9WoPb-qg">
+      <substitutionBindings xmi:id="_bCHv0IXhEemIC-_J-9q4iQ" template="jdbcDriver" propName="/JDBCConnection/DatabaseDriver"/>
+      <substitutionBindings xmi:id="_bwtUIIXhEemIC-_J-9q4iQ" template="dbURL" propName="/JDBCConnection/DatabaseURL"/>
+      <substitutionBindings xmi:id="_cc6S0IXhEemIC-_J-9q4iQ" template="loginTimeout" propName="/JDBCConnection/LoginTimeout"/>
+    </connectionConfig>
+  </jndi:configuration>
+</jndi:namedResource>

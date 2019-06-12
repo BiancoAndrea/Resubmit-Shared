@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:tns="http://www.tibco.com/GenericResubmit/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GenericResubmit" targetNamespace="http://www.tibco.com/GenericResubmit/" xmlns:xsd1="http://www.example.org/CommonResubmit">
+    <wsdl:types>
+    	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    		<xsd:import
+    			namespace="http://www.example.org/CommonResubmit"
+    			schemaLocation="../Schemas/CommonResubmit.xsd">
+    		</xsd:import></xsd:schema></wsdl:types>
+    <wsdl:message name="ResubmitRequest">
+		<wsdl:part name="parameters"
+			element="xsd1:Resubmit_CommonInterface_Input">
+		</wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="ResubmitResponse">
+    	<wsdl:part name="parameters" element="xsd1:Resubmit_CommonInterface_Output"></wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="GenericResubmit">
+    	<wsdl:operation name="Resubmit">
+    		<wsdl:input message="tns:ResubmitRequest"></wsdl:input>
+    		<wsdl:output message="tns:ResubmitResponse"></wsdl:output>
+    	</wsdl:operation>
+    </wsdl:portType></wsdl:definitions>
